@@ -14,8 +14,9 @@ router.get(
   })
 );
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.send("You used google+ API for login");
+  //res.send(req.user);
+  res.redirect("/user/profile");
 });
-router.post("/logout", logout);
+router.get("/logout", logout);
 
 module.exports = router;

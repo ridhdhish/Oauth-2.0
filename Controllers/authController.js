@@ -4,7 +4,8 @@ const login = (req, res) => {
 
 const logout = (req, res) => {
   // Handle using passport
-  res.send("Logout auth");
+  req.logout();
+  res.redirect("/");
 };
 
 module.exports = { login, logout };
